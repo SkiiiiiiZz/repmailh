@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RepMailHelper - OfisHelper | GPT-3.5-Turbo API </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <center>
+    <h2>Répondeur de mail</h2>
+    <form action="/generate" method="post">
+      <h3 for="article_text"></h3>
+      <textarea required="required" placeholder="Entrez le mail auquel il faut répondre..." rows="30" name="article_text" id="article_text" cols="60" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+      <h3>Selectionée le type de réponse :</h3>
+      <div>
+        <label class="rad-label">
+          <input type="radio" class="rad-input" id="Négative" name="style" value="Négative">
+          <div class="rad-design"></div>
+          <div class="rad-text">Négative</div>
+        </label>
+      
+        <label class="rad-label">
+          <input type="radio" class="rad-input" id="Neutre" name="style" value="Neutre">
+          <div class="rad-design"></div>
+          <div class="rad-text">Neutre</div>
+        </label>
+      
+        <label class="rad-label">
+          <input type="radio" class="rad-input" id="Positif" name="style" value="Positif">
+          <div class="rad-design"></div>
+          <div class="rad-text">Positif</div>
+        </label>
+      </div>
+      <br><br><br>
+      <button type="submit">Générer la réponse</button>
+      <script>let btn = document.querySelector("button");
+
+        btn.addEventListener("click", active);
+
+        function active() {
+          btn.classList.toggle("is_active");
+        }</script>
+      <button type="submit">Générer la réponse</button>
+    </form>
+    <div id="result"></div>
+    <script src="script.js"></script>
+  </center>
+  </body>
+</html>
