@@ -26,7 +26,7 @@ app.post('/generate', (req, res) => {
         },
         json: {
             messages: [
-              {"role": "system", "content": "Dans un mail, on commence avec bonjour, sans madame ni monsieur, on utilise des phrases courtes (sujet, verbe), on fini avec une formule de politesse simple tel que, cordialement, bien cordialement, bien à vous. à la fin tu mettra entre crochet Nom du Rédacteur, pour que je puisse modifier moi même. On utilise le présent et des connecteurs simples. N'oublie pas de passer des lignes avec \n et de faire une mise en forme correct. Utilise ces informations pour répondre à ce mail :"},
+              {"role": "system", "content": "Dans un mail, on commence avec bonjour, sans madame ni monsieur, on utilise des phrases courtes (sujet, verbe), on fini avec une formule de politesse simple tel que, cordialement, bien cordialement, bien à vous. à la fin tu mettra entre crochet Nom du Rédacteur, pour que je puisse modifier moi même. On utilise le présent et des connecteurs simples. N'oublie pas de passer des lignes avec \n et de faire une mise en forme correct. Reviens à la ligne au bout de 65 lettres et ne coupe pas de mots. tous les Utilise ces informations pour répondre à ce mail :"},
               {"role": "user", "content": article_text + "de manière" + style} ,
           ],
             model : "gpt-3.5-turbo",
