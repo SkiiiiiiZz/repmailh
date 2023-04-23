@@ -32,17 +32,19 @@
         </label>
       </div>
       <br><br><br>
-      <button type="submit">Générer la réponse</button>
-      <script>let btn = document.querySelector("button");
-
-        btn.addEventListener("click", active);
-
-        function active() {
-          btn.classList.toggle("is_active");
-        }</script>
-      <button type="submit">Générer la réponse</button>
+      <button type="submit" id="generate-btn">Générer la réponse</button>
+      <div id="loader" class="hidden"></div>
     </form>
     <div id="result"></div>
+    <script>
+      let generateBtn = document.querySelector("#generate-btn");
+      let loader = document.querySelector("#loader");
+
+      generateBtn.addEventListener("click", function() {
+        generateBtn.classList.add("hidden");
+        loader.classList.remove("hidden");
+      });
+    </script>
     <script src="script.js"></script>
   </center>
   </body>
