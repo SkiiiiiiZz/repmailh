@@ -32,17 +32,22 @@
         </label>
       </div>
       <br><br><br>
-      <button type="submit" id="generate-btn">Générer la réponse</button>
-      <div id="loader" class="hidden"></div>
+      <button id="submit-btn" type="submit">Générer la réponse</button>
+      <div id="loader" style="display:none;"></div>
     </form>
     <div id="result"></div>
     <script>
-      let generateBtn = document.querySelector("#generate-btn");
+      let form = document.querySelector("form");
+      let btn = document.querySelector("#submit-btn");
       let loader = document.querySelector("#loader");
 
-      generateBtn.addEventListener("click", function() {
-        generateBtn.classList.add("hidden");
-        loader.classList.remove("hidden");
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        btn.style.display = "none";
+        loader.style.display = "inline-block";
+        setTimeout(function() {
+          form.submit();
+        }, 3000);
       });
     </script>
     <script src="script.js"></script>
